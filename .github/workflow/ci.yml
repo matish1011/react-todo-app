@@ -1,0 +1,14 @@
+name: docker chrome headless
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    container: cypress/included:8.0.0
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          wait-on: "http://localhost:5000"
+          browser: chrome
+          headless: true
