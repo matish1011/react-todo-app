@@ -1,5 +1,7 @@
-name: docker chrome headless
-on: [push]
+name: Cypress automation
+on:
+  push:
+    branches: [ master ]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
